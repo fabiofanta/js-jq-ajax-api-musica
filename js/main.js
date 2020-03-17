@@ -4,14 +4,14 @@ $(document).ready(function() {
 
     // $('.genre-selector').val('first');
     $('.genre-selector').change(function() {
-        var genreSel = $('.genre-selector').val();
+        var genreSel = $('.genre-selector').val().toLowerCase();
         console.log(genreSel);
-        if (genreSel == "") {
-            $(this).removeClass('hide');
-            $(this).addClass('show');
+        if (genreSel == "" || genreSel == "all") {
+            $('.card').removeClass('hide');
+            $('.card').addClass('show');
         } else {
             $('.card').each(function() {
-                if (genreSel == $(this).data('genre')) {
+                if (genreSel == $(this).data('genre').toLowerCase()) {
                     $(this).removeClass('hide');
                     $(this).addClass('show');
                 } else {

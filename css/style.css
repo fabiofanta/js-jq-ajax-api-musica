@@ -81,3 +81,23 @@
   .hide {
       display: none;
   }
+
+  @media all and (max-width:1080px) {
+      .box {
+          width:800px;
+      }
+
+      .container {
+          min-height: 800px;
+      }
+  }
+
+  @media all and (max-width:800px) {
+      .box {
+          width:600px;
+      }
+
+      .container {
+          min-height: 700px;
+      }
+  }

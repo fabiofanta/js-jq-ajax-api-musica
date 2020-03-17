@@ -30,6 +30,7 @@
       display: flex;
       flex-wrap: wrap;
       padding: 80px;
+      justify-content: center;
   }
 
   .card {

@@ -42,6 +42,7 @@
       flex-wrap: wrap;
       padding: 80px;
       justify-content: center;
+      min-height: 1200px;
   }
 
   .card {

@@ -6,15 +6,21 @@ $(document).ready(function() {
     $('.genre-selector').change(function() {
         var genreSel = $('.genre-selector').val();
         console.log(genreSel);
-        $('.card').each(function() {
-            if (genreSel == $(this).data('genre')) {
-                $(this).removeClass('hide');
-                $(this).addClass('show');
-            } else {
-                $(this).removeClass('show');
-                $(this).addClass('hide');
-            };
-        });
+        if (genreSel == "") {
+            $(this).removeClass('hide');
+            $(this).addClass('show');
+        } else {
+            $('.card').each(function() {
+                if (genreSel == $(this).data('genre')) {
+                    $(this).removeClass('hide');
+                    $(this).addClass('show');
+                } else {
+                    $(this).removeClass('show');
+                    $(this).addClass('hide');
+                };
+            });
+        };
+
     });
 
     $.ajax ({

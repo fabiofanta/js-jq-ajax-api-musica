@@ -2,6 +2,21 @@ $(document).ready(function() {
     var source = $("#card-template").html();
     var cardTemplate = Handlebars.compile(source);
 
+    // $('.genre-selector').val('first');
+    $('.genre-selector').change(function() {
+        var genreSel = $('.genre-selector').val();
+        console.log(genreSel);
+        $('.card').each(function() {
+            if (genreSel == $(this).data('genre')) {
+                $(this).removeClass('hide');
+                $(this).addClass('show');
+            } else {
+                $(this).removeClass('show');
+                $(this).addClass('hide');
+            };
+        });
+    });
+
     $.ajax ({
         url:'https://flynn.boolean.careers/exercises/api/array/music',
         method:'GET',
